@@ -1,0 +1,19 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/markers/marker-detail.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section class="marker-container">
+  <div class="marker-img">
+    {% comment %} <img src="{% static 'images/sk8r-boi-cat.svg' %}" alt="A skater boy cat" /> {% endcomment %}
+  </div>
+  <div class="marker-details">
+    <h1>{{ marker.name }}</h1>
+      <h2>A {{ marker.description }}</h2>
+    <p>{{ marker.inscription}}</p>
+  </div>
+</section>
+{% endblock %}

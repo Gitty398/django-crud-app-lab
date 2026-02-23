@@ -1,16 +1,10 @@
 from django.shortcuts import render
+from .models import Marker
 
-class Marker:
-    def __init__(self, location):
-        self.location = location
 
-markers = [
-    Marker('White Plains'),
-    Marker('Lexington'),
-    Marker('Concord'),
-    Marker('Brooklyn'),
-]
-
+def marker_index(request):
+    markers = Marker.objects.all()
+    return render(request, 'markers/index.html', {'markers': markers})
 
 def home(request):
     return render(request, 'home.html')
@@ -18,5 +12,6 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
-def marker_index(request):
-    return render(request, 'markers/index.html', {'markers': markers})
+def marker_detail(request, marker_id):
+    marker = Marker.objects.get(id=marker_id)
+    return render(request, 'markers/detail.html', {'marker': marker})
