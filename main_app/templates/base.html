@@ -21,8 +21,9 @@
       </div>
       <nav>
         <ul>
-          <li><a href="/about">About</a></li>
-          <li><a href="/markers">All Markers</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'marker-index' %}">All Markers</a></li>
+          <li><a href="{% url 'marker-create' %}">Add a Marker</a></li>
         </ul>
       </nav>
     </header>

@@ -19,7 +19,7 @@
 <section class="card-container">
   {% for marker in markers %}
   <div class="card">
-    <a href='/markers/{{ marker.id}}'>
+    <a href='{% url 'marker-detail' marker.id %}'>
       <div class="card-content">
         <div class="card-img-container">
           <img
